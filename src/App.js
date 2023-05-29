@@ -4,22 +4,28 @@ import Calendar from './Calendar.js';
 import './App.css';
 
 let dob =''
+let totalWeeks = []
+let usedWeeks = 0
 function App() {
   const [currentValue, setCurrentValue] = useState('')
   const [maxAge, setAge] = useState(90)
   const [fillData, setFillData] = useState(false)
   // const [date, setDate] = useState('')
   
-  function weeksLeft(numberOfWeeks, maxAge=90){
+  function CalculateTotalWeeks(weeks,maxAge=90){
     let totalWeeks = maxAge*52 //Math.floor((maxAge*365.25)/7)
-    console.log(totalWeeks); 
+    let weekList = []
+    for (let i = 0; i < totalWeeks; i++) {
+      weekList.push(<li id={i} className={i<weeks?"weeks used-week":"weeks"}>{"[]"}</li>)
+    }
+    return weekList 
   }
   function storeDate(event){
     event.preventDefault()
     dob = currentValue
-    let weeks = CalculateWeeks(dob)
-    console.log(weeks)
-    weeksLeft(weeks,maxAge)
+    usedWeeks = CalculateWeeks(dob)
+    console.log(usedWeeks)
+    totalWeeks = CalculateTotalWeeks(usedWeeks,maxAge)
     setCurrentValue('') //making the textbox empty
     setFillData(true)
     // setAge('')
@@ -37,7 +43,10 @@ function App() {
         <button type="submit">Submit</button>
         <p>{dob}</p>
       </form>
-      {fillData?<Calendar/>:null}
+      {fillData?<Calendar 
+        numberOfWeeks = {usedWeeks}
+        totalWeeks = {totalWeeks}
+      />:null}
     </main>
   );
 }
