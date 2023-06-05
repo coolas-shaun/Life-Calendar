@@ -16,7 +16,7 @@ function App() {
     let totalWeeks = maxAge*52 //Math.floor((maxAge*365.25)/7)
     let weekList = []
     for (let i = 0; i < totalWeeks; i++) {
-      weekList.push(<li id={i} className={i<weeks?"weeks used-week":"weeks"}>{"[]"}</li>)
+      weekList.push(<li id={i} className={i<weeks?"weeks used-week":"weeks"}></li>)
     }
     return weekList 
   }

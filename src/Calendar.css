@@ -1,0 +1,12 @@
+:root{
+    --oneYear: 52;
+    --oneWeekSize: 6px;
+}
+.calendar-container{
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: row;
+    max-width: calc(var(--oneWeekSize)*var(--oneYear));
+    margin: auto;
+    box-shadow: rgba(245, 235, 235,0.9) 1px 1px ;
+}
