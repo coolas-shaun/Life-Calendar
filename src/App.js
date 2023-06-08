@@ -22,25 +22,28 @@ function App() {
   }
   function storeDate(event){
     event.preventDefault()
-    dob = currentValue
-    usedWeeks = CalculateWeeks(dob)
-    console.log(usedWeeks)
-    totalWeeks = CalculateTotalWeeks(usedWeeks,maxAge)
-    setCurrentValue('') //making the textbox empty
-    setFillData(true)
+    if(currentValue !== ''){
+      dob = currentValue
+      usedWeeks = CalculateWeeks(dob)
+      console.log(usedWeeks)
+      totalWeeks = CalculateTotalWeeks(usedWeeks,maxAge)
+      setCurrentValue('') //making the textbox empty
+      setFillData(true)
     // setAge('')
+    }
+    
   }
   return (
     <main>
       <h1>Life Calendar</h1>
       <form action="" method='GET' onSubmit={storeDate}>
-        <input type="date" value={currentValue} onChange={(event)=>{
+        <input type="date" className="date-inputBox" value={currentValue} onChange={(event)=>{
           setCurrentValue(event.target.value)
         }}/>
-        <input type="number" value={maxAge} onChange={(event)=>{
+        <input type="number" className="date-inputBox" value={maxAge} onChange={(event)=>{
           setAge(event.target.value)
         }}/>
-        <button type="submit">Submit</button>
+        <button type="submit">Go</button>
         <p>{dob}</p>
       </form>
       {fillData?<Calendar 

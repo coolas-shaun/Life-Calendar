@@ -1,12 +1,15 @@
 :root{
+    --container-height:60vh;
     --oneYear: 52;
-    --oneWeekSize: 6px;
+    /* --temp-size: */
+    --oneWeekBoxSize: 7px;
 }
 .calendar-container{
     display: flex;
     flex-wrap: wrap;
     flex-direction: row;
-    max-width: calc(var(--oneWeekSize)*var(--oneYear));
+    max-width: calc(var(--oneWeekBoxSize)*var(--oneYear));
     margin: auto;
-    box-shadow: rgba(245, 235, 235,0.9) 1px 1px ;
+    /* box-shadow: 1px -1px 11px 1px white; */
+    /* outline-color: rgba(255, 255, 255 0.5); */
 }

@@ -1,7 +1,11 @@
+
+@import url('https://fonts.googleapis.com/css2?family=Crimson+Text&display=swap');
+
 *{
   margin: 0;
   padding: 0;
   box-sizing: border-box;
+
 }
 
 main{
@@ -13,6 +17,9 @@ h1{
   color: white;
   margin: 10px 0px 20px;
   font-size: 3rem;
+  word-spacing: 0.5rem;
+  letter-spacing: 0.2rem;
+  font-family: 'Crimson Text', serif;
 }
 
 li{
@@ -20,11 +27,46 @@ li{
   margin: 0.5px 1px;
 }
 .weeks{
-  height: 4px;
-  width: 4px;
-  border: 0.1px solid white;
+  height: 5px;
+  width: 5px;
+  border: 0.05px solid rgb(221, 220, 220);
 }
 
 .used-week{
-  background-color: white;
+  background-color: rgb(221, 220, 220);
+  box-shadow: -0.2px 0.2px 0.5px 0.2px rgb(255, 255, 255);
+}
+
+input{
+  height: 1.5rem;
+  border: none;
+  padding: 2px;
+}
+
+input:focus{
+  /* border: none; */
+  outline: none;
+  border-bottom: 3px solid white;
+  /* box-shadow: 0px 1px 2px 2px white; */
+}
+
+.date-inputBox{
+  background-color: black;
+  border-bottom: 1px solid white;
+  color: antiquewhite;
+  margin: 2px 8px;
+}
+
+button{
+  height: 1.5rem;
+  width: 4%;
+  /* padding: 5px; */
+  background-color: rgb(71, 136, 255);
+  border: 1px solid rgb(17, 43, 90);
+  border-radius: 4px;
+}
+
+button:hover{
+  background-color: rgb(49, 110, 223);
+  /* box-shadow: 0px -1px 2px 2px rgb(71, 136, 255); */
 }
