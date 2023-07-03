@@ -26,15 +26,19 @@ li{
   list-style: none;
   margin: 0.5px 1px;
 }
+
+
+/* 1 rem - 16px
+  0.3125rem - 16/5*/
 .weeks{
-  height: 5px;
-  width: 5px;
+  height: 0.3125rem;
+  width: 0.3125rem;
   border: 0.05px solid rgb(221, 220, 220);
 }
 
 .used-week{
   background-color: rgb(221, 220, 220);
-  box-shadow: -0.2px 0.2px 0.5px 0.2px rgb(255, 255, 255);
+  /* box-shadow: -0.2px 0.2px 0.5px 0.2px rgb(255, 255, 255); */
 }
 
 input{
